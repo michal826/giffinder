@@ -29,17 +29,20 @@ $(document).ready(function() {
             },
         });
     }
-function clearList(){
-   $('#image').empty();
-}
+
     //Add a click handler beloe to call the function when the button is clicked
     $("#button").click(function() {
         var searchTerm = $('#input').val();
-        clearList;
+        clearList();
         callGiphyAPIWithSearchTerm(searchTerm);
     });
-    $("#clear").click(function(){
-    $("#results").empty();
-});
+    $("#clear").click(function() {
+        $("#results").empty();
+    });
 
+    function clearList() {
+        $('#reults').empty();
+        console.log("Dog");
+    }
+console.log(clearList);
 });
