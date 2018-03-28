@@ -12,7 +12,8 @@ $(document).ready(function() {
     function appendImageToBody(srcURL) {
         // write a function that will append an <img> to the body with the
         // URL provided in the parameters
-        $('#results').append('<img src=' + srcURL + '>');
+        $('.results').append('<img src=' + srcURL + '>');
+       
     }
 
     function callGiphyAPIWithSearchTerm(searchTerm) {
@@ -37,12 +38,14 @@ $(document).ready(function() {
         callGiphyAPIWithSearchTerm(searchTerm);
     });
     $("#clear").click(function() {
-        $("#results").empty();
+        $(".results").empty();
     });
-
+    $("#modal").click(function() {
+      var searchTerm = $('#input').val();
+       callGiphyAPIWithSearchTerm(searchTerm); 
+    })
     function clearList() {
-        $('#reults').empty();
-        console.log("Dog");
+        $('.reults').empty();
+     
     }
-console.log(clearList);
 });
